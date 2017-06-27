@@ -1,0 +1,109 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>jQuery stockQuotes Plugin Demo</title>
+    <link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="../dist/jquery.stockquotes.css" />
+    
+  </head>
+  <body>
+<div id="jquery-script-menu">
+<div class="jquery-script-center">
+<ul>
+<li><a href="http://www.jqueryscript.net/other/jQuery-Plugin-To-Display-Stock-Quotes-On-Your-Website-stockQuotes.html">Download This Plugin</a></li>
+<li><a href="http://www.jqueryscript.net/">Back To jQueryScript.Net</a></li>
+</ul>
+<div class="jquery-script-ads"><script type="text/javascript"><!--
+google_ad_client = "ca-pub-2783044520727903";
+/* jQuery_demo */
+google_ad_slot = "2780937993";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></div>
+<div class="jquery-script-clear"></div>
+</div>
+</div>
+    <h2>jQuery stockQuotes Plugin Demo</h2>
+    <br/>
+
+    <div class="item">
+      <span class="title">Twitter:</span>
+      <span class="stock-quote" data-symbol="TWTR"></span>
+    </div>
+    <div class="item">
+      <span class="title">Facebook:</span>
+      <span class="stock-quote" data-symbol="FB"></span>
+    </div>
+    <div class="item">
+      <span class="title">Google:</span>
+      <span class="stock-quote" data-symbol="GOOGL"></span>
+    </div>
+    <div class="item">
+      <span class="title">Netflix:</span>
+      <span class="stock-quote" data-symbol="NFLX"></span>
+    </div>
+    <div class="item">
+      <span class="title">Yahoo:</span>
+      <span class="stock-quote" data-symbol="YHOO"></span>
+    </div>
+
+    <style type="text/css">
+    body {
+      font-family: 'Open Sans';
+      background-color:#fafafa;
+    }
+    h2 { margin:150px auto 30px auto;}
+    .item {
+      margin-bottom: 10px;
+      line-height: 32px;
+      font-size: 26px;
+    }
+    .item .title {
+      width: 160px;
+      display: inline-block;
+      text-align: right;
+      margin-right: 10px;
+    }
+
+    .stock-quote.up .change {
+      border-bottom-width: 10px;
+    }
+    .stock-quote.down .change {
+      border-top-width: 10px;
+    }
+    .stock-quote .change {
+      border-left-width: 8px;
+      border-right-width: 8px;
+    }
+    </style>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="../dist/jquery.stockquotes.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $('.stock-quote').stockQuote();
+      });
+    </script><script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36251023-1']);
+  _gaq.push(['_setDomainName', 'jqueryscript.net']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+  </body>
+</html>

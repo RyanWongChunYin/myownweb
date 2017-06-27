@@ -1,3 +1,36 @@
-h1{
+h1,h2,h5{
 	color:#00A2E8;
+}
+
+p{
+	text-align: justify;
+}
+
+.utubeWrapper{
+	position: relative;
+	padding-bottom: 56.25%;/* 16:9 */
+	padding-top: 25px;
+	height: 0;
+	margin-bottom: 0
+}
+
+.utubeWrapper iframe{
+	position: absolute;
+	top: 5;
+	left: 5;
+	width: 80%;
+	height: 80%;
+}
+
+.pasimg{
+	max-width: 80%;
+	height: auto;
+}
+
+.hot-stocks{
+	border: solid 2px;
+	padding: 25px;
+	border-color: #00A2E8;
+	width: 80%;
+	height:auto;
 }

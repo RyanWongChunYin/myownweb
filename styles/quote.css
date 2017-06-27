@@ -1,0 +1,84 @@
+
+    h2 { margin:150px auto 30px auto;color: #FF0000}
+    .item {
+      margin-bottom: 10px;
+      line-height: 32px;
+      font-size: 26px;
+    }
+    .item .title {
+      width: 160px;
+      display: inline-block;
+      text-align: right;
+      margin-right: 10px;
+    }
+
+    .stock-quote.up .change {
+      border-bottom-width: 10px;
+    }
+    .stock-quote.down .change {
+      border-top-width: 10px;
+    }
+    .stock-quote .change {
+      border-left-width: 8px;
+      border-right-width: 8px;
+    }
+
+    /*
+
+
+
+
+    */
+    .container
+    {
+      background: #ECECEC none;
+      border: 1px solid #D5D4D4;
+      height: 30px;
+      margin: 0 auto;
+      width: 928px;
+    }
+    .container .wrap
+    {
+      width: 920px;
+      left: 5px;
+      top: 0px;
+      overflow: hidden;
+      position: relative;
+      line-height: 30px;
+      font-size-adjust: none;
+    }
+    div.stockTicker
+    {
+      font-size: 18px;
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      position: relative;
+    }
+    div.stockTicker span.quote
+    {
+      margin: 0;
+      font-weight: bold;
+      color: #000;
+      padding: 0 5px 0 10px;
+    }
+    .GreenText
+    {
+      color: Green;
+    }
+    .RedText
+    {
+      color: Red;
+    }
+    .up_green
+    {
+      background: url(http://www.codescratcher.com/wp-content/uploads/2014/11/up.gif) no-repeat left center;
+      padding-left: 10px;
+      margin-right: 5px;
+    }
+    .down_red
+    {
+      background: url(http://www.codescratcher.com/wp-content/uploads/2014/11/down.gif) no-repeat left center;
+      padding-left: 10px;
+      margin-right: 5px;
+    }
