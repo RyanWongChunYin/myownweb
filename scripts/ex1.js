@@ -4,7 +4,8 @@ function handleSubmit(){
 	
 	if(input.charAt(0)>='0'&&input.charAt(0)<='9'){
 		if(input.length == 4){
-			input = input.concat(input,".HK");
+			input = input.concat(".HK");
+
 		}else if (input.length == 3) {
 			input = "0".toString().concat(input,".HK");
 		}else if (input.length == 2) {
@@ -55,7 +56,7 @@ function StockPriceTick(input) {
             StockTickerHTML = StockTickerHTML + parseFloat( Math.abs(PercentChnageInPrice.split('%')[0])).toFixed(2) + "%)</span>";
         	
         });
-		if(StockTickerHTML==""){
+		if(StockTickerHTML==""||(CompName==""&&input.charAt(0)!='^')){
             StockTickerHTML = "<span style='color:Red;'>Please enter correct symbol! </span>"
         }
         $("#demo").html(StockTickerHTML);

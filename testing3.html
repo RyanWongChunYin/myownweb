@@ -8,10 +8,6 @@
   <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <!-- For stock quote-->
-  <link rel="stylesheet" type="text/css" href="scripts/stockQuotes/dist/jquery.stockquotes.css" />
-  <link rel="stylesheet" type="text/css" href="stylesquote.css" />
-  <link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
   <style>
     html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
   </style>
@@ -27,7 +23,7 @@
       <a href="about.html"><img src="images/icon.png" class="w3-bar-item w3-button w3-theme-l1" style="height:42px" href="about.html"/></a>
       <a class="w3-bar-item w3-button w3-right w3-hide-large w3-hover-white w3-large w3-theme-l1" href="javascript:void(0)" onclick="w3_open()"><i class="fa fa-bars"></i></a>
 
-      <a href="about.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">About</a>
+      <a href="About.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">About</a>
       <a href="index.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Indices</a>
       <a href="videos.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Videos</a>
       <a href="#" class="w3-bar-item w3-button w3-hide-small w3-hover-white">News</a>
@@ -58,48 +54,57 @@
     <link rel="stylesheet" type="text/css" href="styles/quote.css">
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js"></script>
+
     <script type="text/javascript" src="scripts/ex1.js"></script>
     <script type="text/javascript" src="scripts/marque.js"></script>
+    <script type="text/javascript" src="scripts/scraper.js"></script>
     <div id="StockTickerContainer" style="height: 32px; line-height: 32px;width: 100%; overflow: hidden; margin-top: 20px;">
       <div id='dvStockTicker' class='stockTicker'>
       </div>
     </div>
 
-    <!-- end the MARQUEE --> 
-
-        <br>
-    <div style="margin-left: 5%">
-        <h5>NASDAQ Composite<h5>
-        <img class="pasimg" src="https://www.google.com/finance/getchart?q=.IXIC&x=INDEXNASDAQ&p=5d&i=240&ei=PwFSWemhIc6H0ATPh5fABg">
-    </div>    
-
-    <div class="w3-row">
+    <!-- end the MARQUEE -->
+    <div class="w3-row w3-padding-64">
       <div class="w3-twothird w3-container">
-        <h2>Market View</h2>
-        <div class="utubeWrapper">
-        <iframe src="http://www.stockconsultant.com/marketviewwide.htm?FFFFFF,0077FF,007700" frameborder=0 scrolling=no marginheight=0 marginwidth=0></iframe>  
-        </div>
 
+       <div id="scraper">
+        <fieldset style="width: 50%">
+          <legend>Enter stock symbol below:</legend>
+          <form onsubmit="return getCSV()">
+            Stock Quote : <input id="sym" type="text" name="stocksym">
+            <input type="submit" name="submitKey" value="Go!">
+         
+          </form>
+        </fieldset>
+        
+      </div>
+      <div id="displayer">
+        <p>please let me pass </p>
       </div>
     </div>
-    
+  </div>
+  <div class="w3-row">
+    <div class="w3-twothird w3-container">
 
-
-    <footer id="myFooter">
-      <div class="w3-container w3-theme-l2 w3-padding-32">
-        <h4>Footer</h4>
-        <h6>Information is provided "as is" and solely for informational purposes, not for trading purposes or advice, and may be delayed.</h6>
-      </div>
-
-      <div class="w3-container w3-theme-l1">
-        <p>Powered by <a href="https://www.google.com/finance?hl=en&tab=ee" target="_blank">Google Finance</a></p>
-      </div>
-    </footer>
-
-    <!-- END MAIN -->
+    </div>
   </div>
 
-  <script>
+
+  <footer id="myFooter">
+    <div class="w3-container w3-theme-l2 w3-padding-32">
+      <h4>Footer</h4>
+      <h6>Information is provided "as is" and solely for informational purposes, not for trading purposes or advice, and may be delayed.</h6>
+    </div>
+
+    <div class="w3-container w3-theme-l1">
+      <p>Powered by <a href="https://www.google.com/finance?hl=en&tab=ee" target="_blank">Google Finance</a></p>
+    </div>
+  </footer>
+
+  <!-- END MAIN -->
+</div>
+
+<script>
 // Get the Sidebar
 var mySidebar = document.getElementById("mySidebar");
 
