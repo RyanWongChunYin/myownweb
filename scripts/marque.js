@@ -122,3 +122,4 @@ function StockPriceTicker() {
         $("#dvStockTicker").jStockTicker({interval: 30, speed: 1.8});
     });
 }
+
