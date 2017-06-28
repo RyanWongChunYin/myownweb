@@ -1,0 +1,12 @@
+<!DOCTYPE movies SYSTEM "http://localhost:7777/xml/movie.dtd">
+<movies>
+	<movie genre="Action">
+		<title>Infernal Affairs</title>
+		<duration>1 hour 29mins</duration>
+		<Starring>
+			<name>Andy Lau</name>
+			<name>Billy</name>
+		</Starring>
+		<price>110.00</price>
+	</movie>
+</movies>

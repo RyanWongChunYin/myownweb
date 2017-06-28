@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="https://www.w3schools.com"
+    xmlns="https://www.w3schools.com"
+    elementFormDefault="qualified">
+
+    <xs:simpleType name="genre">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="Action|Comedy|Romance|Horror"/>
+        </xs:restriction>
+    </xs:simpleType>
+	
+
+    <xs:element name="title" type="xs:string"/>
+    <xs:element name="duration" type="xs:string"/>
+    <xs:element name="name" type="xs:string"/>
+    <xs:element name="price" type="xs:decimal"/>
+ 
+
+    <xs:element name="starring">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="name" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+ 
+    <xs:element name="movie">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="title"/>
+                <xs:element ref="duration"/>
+                <xs:element ref="starring"/>
+                <xs:element ref="price"/>
+            </xs:sequence>
+            <xs:attribute name="genre" type="category" use="required"/>
+        </xs:complexType>
+    </xs:element>
+ 
+    <xs:element name="movies">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="movie" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+ 
+</xs:schema>
