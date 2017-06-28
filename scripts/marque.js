@@ -84,41 +84,41 @@ $(window).load(function () {
             setInterval(function() {StockPriceTicker();} , 60000);
         });
 
-        function StockPriceTicker() {
-            var Symbol = "", CompName = "", Price = "", ChnageInPrice = "", PercentChnageInPrice = ""; 
-            var CNames = "^FTSE,HSBA.L,SL.L,BATS.L,BLND.L,FLG.L,RBS.L,RMG.L,VOD.L";
-            var CNames = "^HSI,0001.HK,0002.HK,0003.HK,0004.HK,0005.HK,0006.HK,0011.HK,0012.HK,0016.HK,0017.HK,0019.HK,0023.HK,0027.HK,0066.HK,0083.HK,0101.HK,0135.HK,0144.HK,0151.HK,0175.HK,0267.HK,0293.HK,0386.HK,0388.HK,0688.HK,0700.HK,0762.HK,0823.HK,0836.HK,0857.HK,0883.HK,0939.HK,0941.HK,0992.HK,1038.HK,1044.HK,1088.HK,1109.HK,1113.HK,1299.HK,1398.HK,1880.HK,1928.HK,2018.HK,2318.HK,2319.HK,2388.HK,2628.HK,3328.HK,3988.HK";
-            var flickerAPI = "http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20yahoo.finance.quotes%20where%20symbol%20in%20(%22" + CNames + "%22)&env=store://datatables.org/alltableswithkeys";
-            var StockTickerHTML = "";
-            
-            var StockTickerXML = $.get(flickerAPI, function(xml) {
-                $(xml).find("quote").each(function () {
-                    Symbol = $(this).attr("symbol");
-                    $(this).find("Name").each(function () {
-                        CompName = $(this).text();
-                    });
-                    $(this).find("LastTradePriceOnly").each(function () {
-                        Price = $(this).text();
-                    });
-                    $(this).find("Change").each(function () {
-                        ChnageInPrice = $(this).text();
-                    });
-                    $(this).find("PercentChange").each(function () {
-                        PercentChnageInPrice = $(this).text();
-                    });
-                    
-                    var PriceClass = "GreenText", PriceIcon="up_green";
-                    if(parseFloat(ChnageInPrice) < 0) { PriceClass = "RedText"; PriceIcon="down_red"; }
-                    StockTickerHTML = StockTickerHTML + "<span class='" + PriceClass + "'>";
-                    StockTickerHTML = StockTickerHTML + "<span class='quote'>" + CompName + " (" + Symbol + ")</span> ";
-                    
-                    StockTickerHTML = StockTickerHTML + parseFloat(Price).toFixed(2) + " ";
-                    StockTickerHTML = StockTickerHTML + "<span class='" + PriceIcon + "'></span>" + parseFloat(Math.abs(ChnageInPrice)).toFixed(2) + " (";
-                    StockTickerHTML = StockTickerHTML + parseFloat( Math.abs(PercentChnageInPrice.split('%')[0])).toFixed(2) + "%)</span>";
-                	
-                });
-				
-                $("#dvStockTicker").html(StockTickerHTML);
-                $("#dvStockTicker").jStockTicker({interval: 30, speed: 1.8});
+function StockPriceTicker() {
+    var Symbol = "", CompName = "", Price = "", ChnageInPrice = "", PercentChnageInPrice = ""; 
+    var CNames = "^FTSE,HSBA.L,SL.L,BATS.L,BLND.L,FLG.L,RBS.L,RMG.L,VOD.L";
+    var CNames = "^HSI,0001.HK,0002.HK,0003.HK,0004.HK,0005.HK,0006.HK,0011.HK,0012.HK,0016.HK,0017.HK,0019.HK,0023.HK,0027.HK,0066.HK,0083.HK,0101.HK,0135.HK,0144.HK,0151.HK,0175.HK,0267.HK,0293.HK,0386.HK,0388.HK,0688.HK,0700.HK,0762.HK,0823.HK,0836.HK,0857.HK,0883.HK,0939.HK,0941.HK,0992.HK,1038.HK,1044.HK,1088.HK,1109.HK,1113.HK,1299.HK,1398.HK,1880.HK,1928.HK,2018.HK,2318.HK,2319.HK,2388.HK,2628.HK,3328.HK,3988.HK";
+    var flickerAPI = "http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20yahoo.finance.quotes%20where%20symbol%20in%20(%22" + CNames + "%22)&env=store://datatables.org/alltableswithkeys";
+    var StockTickerHTML = "";
+    
+    var StockTickerXML = $.get(flickerAPI, function(xml) {
+        $(xml).find("quote").each(function () {
+            Symbol = $(this).attr("symbol");
+            $(this).find("Name").each(function () {
+                CompName = $(this).text();
             });
-        }
+            $(this).find("LastTradePriceOnly").each(function () {
+                Price = $(this).text();
+            });
+            $(this).find("Change").each(function () {
+                ChnageInPrice = $(this).text();
+            });
+            $(this).find("PercentChange").each(function () {
+                PercentChnageInPrice = $(this).text();
+            });
+            
+            var PriceClass = "GreenText", PriceIcon="up_green";
+            if(parseFloat(ChnageInPrice) < 0) { PriceClass = "RedText"; PriceIcon="down_red"; }
+            StockTickerHTML = StockTickerHTML + "<span class='" + PriceClass + "'>";
+            StockTickerHTML = StockTickerHTML + "<span class='quote'>" + CompName + " (" + Symbol + ")</span> ";
+            
+            StockTickerHTML = StockTickerHTML + parseFloat(Price).toFixed(2) + " ";
+            StockTickerHTML = StockTickerHTML + "<span class='" + PriceIcon + "'></span>" + parseFloat(Math.abs(ChnageInPrice)).toFixed(2) + " (";
+            StockTickerHTML = StockTickerHTML + parseFloat( Math.abs(PercentChnageInPrice.split('%')[0])).toFixed(2) + "%)</span>";
+        	
+        });
+		
+        $("#dvStockTicker").html(StockTickerHTML);
+        $("#dvStockTicker").jStockTicker({interval: 30, speed: 1.8});
+    });
+}

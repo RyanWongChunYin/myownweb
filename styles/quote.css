@@ -35,11 +35,11 @@
       border: 1px solid #D5D4D4;
       height: 30px;
       margin: 0 auto;
-      width: 928px;
+      width: 100%;
     }
     .container .wrap
     {
-      width: 920px;
+      width:100%;
       left: 5px;
       top: 0px;
       overflow: hidden;
