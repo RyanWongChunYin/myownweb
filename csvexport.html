@@ -3,9 +3,7 @@
 <head>
   <title>Webscraper</title>
   <meta charset="UTF-8">
-
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
@@ -15,13 +13,7 @@
   </style>
 
   <link rel="stylesheet" type="text/css" href="styles/stylecss.css">
-  <link rel="stylesheet" type="text/css" href="styles/quote.css">
-
-  <script type="text/javascript" src="scripts/ex1.js"></script>
-  <script type="text/javascript" src="scripts/marque.js"></script>
-
-
-
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body>
 
@@ -30,8 +22,8 @@
     <div class="w3-bar w3-theme w3-top w3-left-align w3-large">
       <a href="about.html"><img src="images/icon.png" class="w3-bar-item w3-button w3-theme-l1" style="height:42px" href="about.html"/></a>
       <a class="w3-bar-item w3-button w3-right w3-hide-large w3-hover-white w3-large w3-theme-l1" href="javascript:void(0)" onclick="w3_open()"><i class="fa fa-bars"></i></a>
-      
-      <a href="about.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">About</a>
+
+      <a href="About.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">About</a>
       <a href="index.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Indices</a>
       <a href="videos.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Videos</a>
 
@@ -62,35 +54,33 @@
     <link rel="stylesheet" type="text/css" href="styles/quote.css">
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js"></script>
+
     <script type="text/javascript" src="scripts/ex1.js"></script>
     <script type="text/javascript" src="scripts/marque.js"></script>
+    <script type="text/javascript" src="scripts/scraper.js"></script>
     <div id="StockTickerContainer" style="height: 32px; line-height: 32px;width: 100%; overflow: hidden; margin-top: 20px;">
       <div id='dvStockTicker' class='stockTicker'>
       </div>
     </div>
-
     <!-- end the MARQUEE -->
-    <div class="w3-row w3-padding-64">
-      <div class="w3-twothird w3-container">
+    <h1>CSV export</h1>
+    <!-- the quoting form -->
+    <script type="text/javascript" src="scripts/scraper.js" ></script>
 
-        <h1 >About</h1>
-        <img src="images/dataExtract.png" class="pasimg" >
-        <p>Web scraping is a technique to extract large amounts of data from websites whereby the data is extracted and saved to a local file in your computer or to a database in table format. Data displayed by most websites can only be viewed using a web browser. They do not offer the functionality to save a copy of this data for personal use. The only option then is to manually copy and paste the data - a very tedious job which can take many hours or sometimes days to complete. This website allows you to skip those processes and gets the data directly.</p>
-      </div>
-      <div class="w3-third w3-container">
-        <p class="w3-border w3-padding-large w3-padding-32 w3-center">AD</p>
-        <p class="w3-border w3-padding-large w3-padding-64 w3-center">AD</p>
-      </div>
-    </div>
-    <!-- next topic-->
-    <div class="w3-row">
-      <div class="w3-twothird w3-container">
-        <h1></h1>
-        <p>
 
-        </p>
-      </div>
-    </div>
+    <fieldset style="width: 50%">
+
+      <legend>Enter stock symbol below:</legend>
+      <p style="color: red">Hong Kong Stock Market Only!</p>
+      <form onsubmit="return getCSV()">
+        Stock Quote : <input id="sym" type="text" name="stocksym">
+        <input type="submit" name="submitKey" value="Go!">
+      </form>
+    </fieldset>
+    <button onclick="copyAll('#displayer')" style="margin-top: 5px;">Copy All !</button>
+    <div id="displayer" style="width: 90%;height: 300px; overflow: scroll;margin-top: 5px;border: solid 1px;"> </div>
+    <!--  end of quote -->
+
 
     <footer id="myFooter">
       <div class="w3-container w3-theme-l2 w3-padding-32">

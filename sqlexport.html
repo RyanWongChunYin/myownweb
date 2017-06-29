@@ -26,7 +26,7 @@
       <a href="About.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">About</a>
       <a href="index.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Indices</a>
       <a href="videos.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Videos</a>
-      <a href="#" class="w3-bar-item w3-button w3-hide-small w3-hover-white">News</a>
+
 
     </div>
   </div>
@@ -37,10 +37,10 @@
       <i class="fa fa-remove"></i>
     </a>
     <h4 class="w3-bar-item"><b>Menu</b></h4>
-    <a class="w3-bar-item w3-button w3-hover-black" href="#">Export SQL</a>
-    <a class="w3-bar-item w3-button w3-hover-black" href="#">Export CSV</a>
+    <a class="w3-bar-item w3-button w3-hover-black" href="sqlexport.html">Export SQL</a>
+    <a class="w3-bar-item w3-button w3-hover-black" href="csvexport.html">Export CSV</a>
     <a class="w3-bar-item w3-button w3-hover-black" href="quote.html">Quotes</a>
-    <a class="w3-bar-item w3-button w3-hover-black" href="#">Stock Screener</a>
+
   </nav>
 
   <!-- Overlay effect when opening sidebar on small screens -->
@@ -62,32 +62,25 @@
       <div id='dvStockTicker' class='stockTicker'>
       </div>
     </div>
-
     <!-- end the MARQUEE -->
-    <div class="w3-row w3-padding-64">
-      <div class="w3-twothird w3-container">
+    <h1>SQL export</h1>
+  <!-- the quoting form -->
+  <script type="text/javascript" src="scripts/scraperSQL.js" ></script>
 
-       <div id="scraper">
-        <fieldset style="width: 50%">
-          <legend>Enter stock symbol below:</legend>
-          <form onsubmit="return getCSV()">
-            Stock Quote : <input id="sym" type="text" name="stocksym">
-            <input type="submit" name="submitKey" value="Go!">
-         
-          </form>
-        </fieldset>
-        
-      </div>
-      <div id="displayer">
-        <p>please let me pass </p>
-      </div>
-    </div>
-  </div>
-  <div class="w3-row">
-    <div class="w3-twothird w3-container">
 
-    </div>
-  </div>
+  <fieldset style="width: 50%">
+
+    <legend>Enter stock symbol below:</legend>
+    <p style="color: red">Hong Kong Stock Market Only!</p>
+    <form onsubmit="return getSQL()">
+      Stock Quote : <input id="sym" type="text" name="stocksym"><br>
+      Table Name : <input id="tablename" type="text" name="table" style="margin-top: 1px">
+      <input type="submit" name="submitKey" value="Go!">
+    </form>
+  </fieldset>
+  <button onclick="copyAll('#displayer')" style="margin-top: 5px;">Copy All !</button>
+  <div id="displayer" style="width: 90%;height: 300px; overflow: scroll;margin-top: 5px;border: solid 1px;"> </div>
+  <!--  end of quote -->
 
 
   <footer id="myFooter">
