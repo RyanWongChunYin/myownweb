@@ -49,14 +49,14 @@ function getSQL(){
 		var len = res.length;
 		res = res.slice(5,len);
 		console.log(res);
-		outputHTML = outputHTML +"<span>CREATE TABLE CUSTOMERS(STOCK INT NOT NULL,DATE DATE NOT NULL,OPEN DECIMAL (18, 2),HIGH DECIMAL (18, 2), LOW  DECIMAL (18, 2), CLOSE DECIMAL (18, 2), VOLUME DECIMAL INT, PRIMARY KEY (STOCK,DATE));</span><br><br>"
+		outputHTML = outputHTML +"<span>CREATE TABLE "+tableName+"(STOCK INT NOT NULL,T_DATE VARCHAR2(12) NOT NULL,OPEN DECIMAL(18, 2),HIGH DECIMAL (18, 2), LOW  DECIMAL (18, 2), CLOSE DECIMAL (18, 2), VOLUME INT, PRIMARY KEY (STOCK,T_DATE));</span><br><br>"
 		for(i =6;i<res.length;i++){
 			if(i%6 == 0){
-				outputHTML = outputHTML + "<span>INSERT INTO "+tableName+" (STOCK,DATE,OPEN,HIGH,LOW,CLOSE,VOLUME) VALUES ("+input+","+res[i]+",";
+				outputHTML = outputHTML + "<span>INSERT INTO "+tableName+" (STOCK,T_DATE,OPEN,HIGH,LOW,CLOSE,VOLUME) VALUES ("+input+",'"+res[i].replace(/,/g," ").replace(/\s/g,"")+"',";
 			}else if(i%6 == 5){
-				outputHTML = outputHTML + res[i]+");</span><br>";
+				outputHTML = outputHTML + res[i].replace(/,/g,"").replace(/\s/g,"")+");</span><br>";
 			}else{
-				outputHTML = outputHTML+res[i]+",";
+				outputHTML = outputHTML+res[i].replace(/,/g,"").replace(/\s/g,"")+",";
 			}
 		}
 		$("#displayer").html(outputHTML);

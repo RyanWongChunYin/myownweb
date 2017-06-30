@@ -4,13 +4,14 @@
   <title>Webscraper</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-  <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <!-- For stock quote-->
   <link rel="stylesheet" type="text/css" href="scripts/stockQuotes/dist/jquery.stockquotes.css" />
   <link rel="stylesheet" type="text/css" href="stylesquote.css" />
+  <link rel="stylesheet" type="text/css" href="styles/my-theme-black.css">
+  <link rel="stylesheet" type="text/css" href="styles/myowncss.css">  
   <link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
   <style>
     html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
@@ -36,7 +37,7 @@
   </div>
 
   <!-- Sidebar -->
-  <nav class="w3-sidebar w3-bar-block w3-collapse w3-large w3-theme-l5 w3-animate-left" style="z-index:3;width:250px;margin-top:50px;" id="mySidebar">
+  <nav class="w3-sidebar w3-bar-block w3-collapse w3-large w3-theme-l5 w3-animate-left" style="z-index:3;width:250px;margin-top:43px;" id="mySidebar">
     <a href="javascript:void(0)" onclick="w3_close()" class="w3-right w3-xlarge w3-padding-large w3-hover-black w3-hide-large" title="Close Menu">
       <i class="fa fa-remove"></i>
     </a>
@@ -57,6 +58,7 @@
     <link rel="stylesheet" type="text/css" href="styles/stylecss.css">
     <link rel="stylesheet" type="text/css" href="styles/quote.css">
 
+
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js"></script>
     <script type="text/javascript" src="scripts/ex1.js"></script>
     <script type="text/javascript" src="scripts/marque.js"></script>
@@ -67,38 +69,38 @@
 
     <!-- end the MARQUEE --> 
 
-        <br>
+    <br>
     <div style="margin-left: 5%">
-        <h5>NASDAQ Composite<h5>
-        <img class="pasimg" src="https://www.google.com/finance/getchart?q=.IXIC&x=INDEXNASDAQ&p=5d&i=240&ei=PwFSWemhIc6H0ATPh5fABg">
-    </div>    
+      <h5>Hang Seng Index<h5>
+        <img class="pasimg" src="https://www.google.com/finance/getchart?q=HSI&x=INDEXHANGSENG&p=5d&i=240&ei=ZshVWZGDGcKe0QT0vaf4DA">
+      </div>    
 
-    <div class="w3-row">
-      <div class="w3-twothird w3-container">
-        <div class="utubeWrapper">
-        <iframe style="margin-left: 5%" src="http://www.stockconsultant.com/marketviewwide.htm?FFFFFF,0077FF,007700" frameborder=0 scrolling=no marginheight=0 marginwidth=0></iframe>  
+      <div class="w3-row">
+        <div class="w3-twothird w3-container">
+          <div class="utubeWrapper">
+            <iframe style="margin-left: 5%" src="http://www.stockconsultant.com/marketviewwide.htm?FFFFFF,0077FF,007700" frameborder=0 scrolling=no marginheight=0 marginwidth=0></iframe>  
+          </div>
+
+        </div>
+      </div>
+      
+
+
+      <footer id="myFooter">
+        <div class="w3-container w3-theme-l2 w3-padding-32">
+          <h4>Footer</h4>
+          <h6>Information is provided "as is" and solely for informational purposes, not for trading purposes or advice, and may be delayed.</h6>
         </div>
 
-      </div>
+        <div class="w3-container w3-theme-l1">
+          <p>Powered by <a href="https://www.google.com/finance?hl=en&tab=ee" target="_blank">Google Finance</a> & Yahoo YQL.</p>
+        </div>
+      </footer>
+
+      <!-- END MAIN -->
     </div>
-    
 
-
-    <footer id="myFooter">
-      <div class="w3-container w3-theme-l2 w3-padding-32">
-        <h4>Footer</h4>
-        <h6>Information is provided "as is" and solely for informational purposes, not for trading purposes or advice, and may be delayed.</h6>
-      </div>
-
-      <div class="w3-container w3-theme-l1">
-        <p>Powered by <a href="https://www.google.com/finance?hl=en&tab=ee" target="_blank">Google Finance</a></p>
-      </div>
-    </footer>
-
-    <!-- END MAIN -->
-  </div>
-
-  <script>
+    <script>
 // Get the Sidebar
 var mySidebar = document.getElementById("mySidebar");
 

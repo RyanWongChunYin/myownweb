@@ -42,14 +42,15 @@ function getCSV(){
 		console.log(res);
 		for(i =0;i<res.length;i++){
 			if(i%6 == 0){
-				outputHTML = outputHTML + "<span>"+res[i]+",";
+				outputHTML = outputHTML + "<span>"+res[i].replace(/,/g,"")+",";
 			}else if(i%6 == 5){
-				outputHTML = outputHTML + res[i]+"</span><br>";
+				outputHTML = outputHTML + res[i].replace(/,/g,"")+"</span><br>";
 			}else{
-				outputHTML = outputHTML+res[i]+",";
+				outputHTML = outputHTML+res[i].replace(/,/g,"")+",";
 			}
 		}
 		$("#displayer").html(outputHTML);
+		console.log(outputHTML);
 	});
 
 	return false;

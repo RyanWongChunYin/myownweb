@@ -26,11 +26,15 @@ function handleSubmit(){
 
 function StockPriceTick(input) {
     var Symbol = "", CompName = "", Price = "", ChnageInPrice = "", PercentChnageInPrice = ""; 
+    var DaysHigh = "", YearHigh = "";
+    var DaysLow = "",YearLow = "";
     var CNames = input;
-    var flickerAPI = "http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20yahoo.finance.quotes%20where%20symbol%20in%20(%22" + CNames + "%22)&env=store://datatables.org/alltableswithkeys";
+    var Yqlapi = "http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20yahoo.finance.quotes%20where%20symbol%20in%20(%22" + CNames + "%22)&env=store://datatables.org/alltableswithkeys";
     var StockTickerHTML = "";
+    var DetailHTML = "";
     //http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20yahoo.finance.quotes%20where%20symbol%20in%20(%222800.HK%22)&env=store://datatables.org/alltableswithkeys
-    var StockTickerXML = $.get(flickerAPI, function(xml) {
+    console.log(Yqlapi);
+    var StockTickerXML = $.get(Yqlapi, function(xml) {
         $(xml).find("quote").each(function () {
             Symbol = $(this).attr("symbol");
             $(this).find("Name").each(function () {
@@ -45,6 +49,18 @@ function StockPriceTick(input) {
             $(this).find("PercentChange").each(function () {
                 PercentChnageInPrice = $(this).text();
             });
+            $(this).find("DaysHigh").each(function () {
+                DaysHigh = $(this).text();
+            });
+            $(this).find("DaysLow").each(function () {
+                DaysLow = $(this).text();
+            });
+            $(this).find("YearHigh").each(function () {
+                YearHigh = $(this).text();
+            });
+            $(this).find("YearLow").each(function () {
+                YearLow = $(this).text();
+            });
             
             var PriceClass = "GreenText", PriceIcon="up_green";
             if(parseFloat(ChnageInPrice) < 0) { PriceClass = "RedText"; PriceIcon="down_red"; }
@@ -55,11 +71,15 @@ function StockPriceTick(input) {
             StockTickerHTML = StockTickerHTML + "<span class='" + PriceIcon + "'></span>" + parseFloat(Math.abs(ChnageInPrice)).toFixed(2) + " (";
             StockTickerHTML = StockTickerHTML + parseFloat( Math.abs(PercentChnageInPrice.split('%')[0])).toFixed(2) + "%)</span>";
         	
+            DetailHTML = DetailHTML +"<span>Day High: "+DaysHigh+"  </span><span>   Day Low:"+DaysLow+"</span><br>";
+            DetailHTML = DetailHTML +"<span>Year High: "+YearHigh+"  </span><span>  Year Low:"+YearLow+"</span><br>";
+
         });
 		if(StockTickerHTML==""||(CompName==""&&input.charAt(0)!='^')){
             StockTickerHTML = "<span style='color:Red;'>Please enter correct symbol! </span>"
         }
         $("#demo").html(StockTickerHTML);
+        $("#demo2").html(DetailHTML);
 
     });
 }
